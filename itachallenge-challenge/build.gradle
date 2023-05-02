@@ -39,8 +39,7 @@ dependencies {
     testImplementation group: 'org.assertj', name: 'assertj-core', version: '3.24.2'
 
     //new
-    //testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testImplementation group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '2.6.1'
+    testImplementation group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '3.0.6'
     testImplementation group: 'org.springframework', name: 'spring-test', version: '5.3.13'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
