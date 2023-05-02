@@ -12,11 +12,11 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 class DemoTest {
 
     @Autowired
-    Demo demo;
+    private Demo demo;
 
     @Test
     void demoTest(){
         String result = demo.getDemo();
-        Assertions.assertEquals("demo version",result);
+        Assertions.assertEquals("demo",result);
     }
 }

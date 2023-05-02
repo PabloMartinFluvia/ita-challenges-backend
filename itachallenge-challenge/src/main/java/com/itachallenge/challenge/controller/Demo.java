@@ -6,15 +6,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class Demo {
 
-    private String demo = "demo";
-
-    @Autowired
-    private B b;
+    private final String demo = "demo";
 
     public Demo() {
     }
 
     public String getDemo(){
-        return demo+" "+b.getB();
+        return demo;
     }
 }
