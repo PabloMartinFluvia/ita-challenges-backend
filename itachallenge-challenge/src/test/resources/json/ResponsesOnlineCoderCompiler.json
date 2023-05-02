@@ -1,0 +1,152 @@
+[
+  {
+    "cpuTime": "0.01",
+    "memory": "7772",
+    "output": "Finally works (phyton)!",
+    "language": {
+      "id": "python3",
+      "version": 4,
+      "version_name": "3.9.9"
+    }
+  },
+  {
+    "cpuTime": "0.01",
+    "memory": "19784",
+    "output": "Finally works (php)!",
+    "language": {
+      "id": "php",
+      "version": 4,
+      "version_name": "8.0.13"
+    }
+  },
+  {
+    "cpuTime": "0.04",
+    "memory": "31364",
+    "output": "Finally works (node)\n",
+    "language": {
+      "id": "nodejs",
+      "version": 4,
+      "version_name": "17.1.0"
+    }
+  },
+  {
+    "cpuTime": "0.11",
+    "memory": "31836",
+    "output": "Finally works (java)!",
+    "language": {
+      "id": "java",
+      "version": 4,
+      "version_name": "JDK 17.0.1"
+    }
+  },
+  {
+    "cpuTime": "0.00",
+    "memory": "7772",
+    "output": "15",
+    "language": {
+      "id": "python3",
+      "version": 4,
+      "version_name": "3.9.9"
+    }
+  },
+  {
+    "cpuTime": "0.00",
+    "memory": "20100",
+    "output": "15",
+    "language": {
+      "id": "php",
+      "version": 4,
+      "version_name": "8.0.13"
+    }
+  },
+  {
+    "cpuTime": "0.06",
+    "memory": "31544",
+    "output": "15\n",
+    "language": {
+      "id": "nodejs",
+      "version": 4,
+      "version_name": "17.1.0"
+    }
+  },
+  {
+    "cpuTime": "0.12",
+    "memory": "31924",
+    "output": "15",
+    "language": {
+      "id": "java",
+      "version": 4,
+      "version_name": "JDK 17.0.1"
+    }
+  },
+  {
+    "cpuTime": "0.01",
+    "memory": "7636",
+    "output": "15",
+    "language": {
+      "id": "python3",
+      "version": 4,
+      "version_name": "3.9.9"
+    }
+  },
+  {
+    "cpuTime": "0.01",
+    "memory": "20024",
+    "output": "15",
+    "language": {
+      "id": "php",
+      "version": 4,
+      "version_name": "8.0.13"
+    }
+  },
+  {
+    "cpuTime": "0.05",
+    "memory": "31616",
+    "output": "15\n",
+    "language": {
+      "id": "nodejs",
+      "version": 4,
+      "version_name": "17.1.0"
+    }
+  },
+  {
+    "cpuTime": "0.07",
+    "memory": "31680",
+    "output": "15",
+    "language": {
+      "id": "java",
+      "version": 4,
+      "version_name": "JDK 17.0.1"
+    }
+  },
+  {
+    "cpuTime": "0.01",
+    "memory": "7988",
+    "output": "15",
+    "language": {
+      "id": "python3",
+      "version": 4,
+      "version_name": "3.9.9"
+    }
+  },
+  {
+    "cpuTime": "0.00",
+    "memory": "20140",
+    "output": "15",
+    "language": {
+      "id": "php",
+      "version": 4,
+      "version_name": "8.0.13"
+    }
+  },
+  {
+    "cpuTime": "0.19",
+    "memory": "36604",
+    "output": "15",
+    "language": {
+      "id": "java",
+      "version": 4,
+      "version_name": "JDK 17.0.1"
+    }
+  }
+]

@@ -1,0 +1,92 @@
+[
+    {
+        "language": "python3",
+        "version": "latest",
+        "code": "print(\"Finally works (phyton)!\", end=\"\");",
+        "input": null
+    },
+    {
+        "language": "php",
+        "version": "latest",
+        "code": "<?php echo \"Finally works (php)!\"; ?>",
+        "input": null
+    },
+    {
+        "language": "nodejs",
+        "version": "latest",
+        "code": "console.log('Finally works (node)');",
+        "input": null
+    },
+    {
+        "language": "java",
+        "version": "latest",
+        "code": "public class Challenge { public static void main(String args[]) { System.out.print(\"Finally works (java)!\");}}",
+        "input": null
+    },
+    {
+        "language": "python3",
+        "version": "latest",
+        "code": "x = 5 \ny = 10 \nsum = int(x) + int(y) \nprint(sum, end=\"\");",
+        "input": null
+    },
+    {
+        "language": "php",
+        "version": "latest",
+        "code": "<?php $x = 5; $y = 10; $sum = $x + $y; echo $sum; ?>",
+        "input": null
+    },
+    {
+        "language": "nodejs",
+        "version": "latest",
+        "code": "var x = 5; var y = 10; var sum = x + y; console.log(sum);",
+        "input": null
+    },
+    {
+        "language": "java",
+        "version": "latest",
+        "code": "public class Challenge { public static void main(String args[]) { int x = 5; int y = 10; int sum = x + y; System.out.print(sum);}}",
+        "input": null
+    },
+    {
+        "language": "python3",
+        "version": "latest",
+        "code": "x=5 \ny=10 \ndef do_sum(a,b): \n\treturn a+b \nsum=do_sum(x,y) \nprint(sum,end=\"\")",
+        "input": null
+    },
+    {
+        "language": "php",
+        "version": "latest",
+        "code": "<?php $x = 5; $y = 10; function doSum(int $a, int $b){ return $a + $b; } $sum = doSum($x, $y); echo $sum; ?>",
+        "input": null
+    },
+    {
+        "language": "nodejs",
+        "version": "latest",
+        "code": "var x = 5; var y = 10; function doSum(a, b) {return a+b;} var sum = doSum(x,y); console.log(sum);",
+        "input": null
+    },
+    {
+        "language": "java",
+        "version": "latest",
+        "code": "public class Challenge { public static void main(String args[]) { int x = 5; int y = 10; int sum = new Challenge().doSum(x,y); System.out.print(sum);} public int doSum(int a, int b){return a+b;}}",
+        "input": null
+    },
+    {
+        "language": "python3",
+        "version": "latest",
+        "code": "x,y = map(int,input().split()) \ndef do_sum(a,b): \n\treturn a+b \nsum=do_sum(x,y) \nprint(sum,end=\"\")",
+        "input": "5 10"
+    },
+    {
+        "language": "php",
+        "version": "latest",
+        "code": "<?php $line = trim(fgets(STDIN)); list($x, $y) = explode(' ', $line); function doSum(int $a, int $b){ return $a + $b; } $sum = doSum($x, $y); echo $sum; ?>",
+        "input": "5 10"
+    },
+    {
+        "language": "java",
+        "version": "latest",
+        "code": "import java.util.Scanner; public class Challenge { public static void main(String args[]) {Scanner reader = new Scanner(System.in); int x = reader.nextInt(); int y = reader.nextInt(); int sum = new Challenge().doSum(x,y); System.out.print(sum);} public int doSum(int a, int b){return a+b;}}",
+        "input": "5 10"
+    }
+]

@@ -1,0 +1,33 @@
+Hay que passarlo en una sola linia
+para que se ejecute hace falta classe principal con método main
+
+"
+//IMPORTANTE: incluir imports en caso que se usen!
+//-> Trabajar con collections / generics -> complica la cosa
+//-> intentar empezar con retos que trabajen solo con tipos primitivos, strings, arrays de estos
+
+public class Challenge {
+    public static void main(String args[]) {
+
+         //Declaración de parametros a testear propuestos por el creador del challenge
+        //algunos compilers permiten datos inputs stdin -> Buffered reader or Scanner -> imports!
+        int x = lectura(); int y = lectura();
+        //VS
+        // incluir-los nosotros "hardcoded"
+        int x = 3; int y = 5;
+
+        //hay que "llamar al método del alumno" -> como mínimo hay que saber que nombre tiene
+        int sum = new Challenge().doSum(x,y);
+
+        //Lo que la api devuelve:
+        System.out.print(sum);
+   }
+
+   //Metodo propuesto por el alumno:
+   public int doSum(int a, int b){
+        return a+b;
+   }
+
+}
+
+"
