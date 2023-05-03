@@ -18,8 +18,8 @@
 4. Proxy: Se le inyecta un ApiSpecProvider. 
    1. Método a invocar: **requestCodeExecution(apiTarget, apiTargetRequestBody)**.
    2. Internamente pide al ApiSpecProvier el ApiSpec associado al apiTarget (proporcionado en la petición).
-   3. De esta manera, el proxy debería funcionar par cualquier api target.
-   4. Si el diseño se complica: otra opción seía tener N proxies ya configurados, y que el service le pida a una factoría el proxy que se necesite segun el api target.
+   3. De esta manera, el webclient del proxy debería funcionar par cualquier api target.
+   4. Si el diseño se complica: otra opción seía tener N web clients ya configurados, y que el proxy le pida a una factoría el webclient que se necesite segun el api target.
 5. ApiRequestDto: puede llegar a ser la clase **más problemática**. Ya que cada API puede tener "sus peculiaridades" (algún campo extra, o con otro nombre...). **Diseño provisional, update on demand**.
 6. ApiResponseDto: puede variar, pero con tal de poner tantos campos como sea necesario y así poder deserializar cualquier posible respuesta... Chapuzilla si, xo funcionaría, y la app, al saber la api target, podría hacer los gets "según el caso".
 
@@ -27,7 +27,7 @@
 1. **Automatizar la creación del campo del codigo ejecutable (para luego setearlo en el requestDto de la petición) tiene pinta de no ser trivial**
 2. He hecho pruebas con distintos RequestDto (a puro dummy en un .json), para probar como debería ser el "String del codigo ejecutable".
       - En el último set de pruebas el dto de la petición tiene: 2 valores input + un codigo ejecutalbe que lee 2 valores + llama a una función que calcula la suma de estos valores (pasandolos como paramtros) + muestra el resultado -> el dto de respuesta nos da la suma. Done en PHP, Python, y java. En node no consigo lo de leer inputs por consola, demasiado complejo para mi, que no tengo ni idea de node (Questions, Promises... wtf): **help needed**) ** 
-      - El set de pruebas previo es el mismo ejercico, pero en lugar de leer los inputs y guardarlos en variables, estas  estan inicializadas en el codigo proporcionado. Puede ser una opción viable, ya que los valores a validar serían constantes (introducidos por el creador del reto).
+      - El set de pruebas previo es el mismo ejercico, pero en lugar de leer los inputs y guardarlos en variables, estas  estan inicializadas en el codigo proporcionado. Puede ser una opción viable, ya que los valores que se pasan como a argumento al método para validarlo pueden ser tratados como constantes (introducidos por el creador del reto).
       - Así que **implementar "un validador de métodos/funciones senzillas" es viable a corto plazo**. (aunque automatizarlo no es tarea fácil, no seran unas pocas semanas). 
       - Obs: Hay que imaginar que el alumno solo proporcionaría el método/función, la inclusión del resto del código lo tenemos que automatizar nosotros (y es distinto para cada tecnología).
       - Ver resources.json.requests + los últimos en examples + el java code.txt + los tests hechos.
@@ -36,7 +36,7 @@
    1. No esperar y atacar ya las historias de usuario 4.1 y 5.1 (ídem requisito: crear reto, lo del rol es secundario, cuando se implemente la seguridad se restinge el acceso y listos).
       - O al menos empezar ya las conversaciones para que el cliente sea un poco más específico respecto a los challenges. Al fin y al cabo es el core de lo que quiere.
       - Y mientras se hacen las gestiones terminar la épica 1, para que **tenga algo funcionando**, pero **sin modelos ni persistencia, tirando de dummys y dtos**. O como mucho un modelo básico de Challenge (no persistente + solo con la basic info del listado), para aplicarle a el (y no al dto) la lógica de filter y sorting.
-   2. Postergarlo probablemente implique tener que refactorizar mucho más adelante, o incluso que **se haya gastado tiempo/dienero en implementar algo que no vale para nada** porque no se adapta a lo que pedirá (ej: sección de soluciones + modelado de challenge + ORM/ODM).
+   2. Postergarlo probablemente implique tener que refactorizar mucho más adelante, o incluso que **se haya gastado tiempo/dienero en implementar algo que no vale para nada** porque no se adapta a lo que pedirá (ej: sección de soluciones + sección enviar solución + modelado de challenge + ORM/ODM).
    3. **Es probable que ni el propio cliente sepa muy bien lo que quiere (sería lo normal).**
    4. Además es probable que no tenga conocimientos técnicos (probablemente sea alguien del staff/administración de ITA). Entonces:
       - Proponer al cliente empezar por algo "sencillo, bueno, bonito y barato", y ya más adelante ampliar funcionalidad -> retos que implquen que el alumno: 
@@ -46,6 +46,6 @@
       - Se podría asegurar al cliente que **el tendrá la última palabra**, pero que sería mejor **delegar en los mentores los aspectos técnicos de como debe introducirse y validarse un reto**.
       - Así: colaboraríamos mejor, ya que "hablaríamos el mismo idioma" + tendríamos una idea clara de lo que hay que hacer + evitaríamos que el cliente vaya "metiendo ruido y dando tumbos" (alguien no técnico se comportaría así, aunque no fuese esta su intención).
       - Y dudo mucho que al final el cliente pueda oponerse (aunque quisiera) a lo decidio, **ya que la mayoría de mentores (o cuantos más mejor) habrían dado "su opinión" (punto clave) y estarían de acuerdo en que lo implementado satisface sus necesidades para poder crear buenos retos para los alumnos (sencillos si, pero útiles para el user target inicial: alumnos empezando en alguna tecnología).**
-      - Y ya una vez implementada y desplegada **toda** la app , se podría empezar la fase "ampliar funcionalidad con retos más complejos a gusto del cliente", sin temer "que el cliente se flipe y su implementación implique augmentar el plazo de entrega (y los costes)", ya que la app ya estaría 100% operativa y siendo usada.
+      - Y ya una vez implementada y desplegada **toda** la app , se podría empezar la fase "ampliar funcionalidad con retos más complejos a gusto del cliente", sin temer "que el cliente se flipe y su implementación implique augmentar el plazo de entrega (y los costes)", ya que la app ya estaría 100% operativa y siendo usada (mucha menor presión para "cumplir el plazo de implementación")  ->  :)
 
 
