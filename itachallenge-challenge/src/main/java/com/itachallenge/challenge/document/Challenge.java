@@ -41,7 +41,7 @@ public class Challenge {
     private Language[] languages;
 
     @Field(name="resources")
-    private Resource[] resources;
+    private Tag[] tags;
 
     @Field(name="related")
     private Challenge[] related;
