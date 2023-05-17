@@ -3,6 +3,11 @@ spring:
     name: itachallenge-challenge
   jmx:
     enabled: true
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: challengeDB
 
 
 springdoc:

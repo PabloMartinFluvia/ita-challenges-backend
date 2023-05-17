@@ -16,7 +16,7 @@ import java.util.UUID;
 public class Language {
 
     @Id
-    private UUID languageId;
+    private int languageId;
 
     @Field(name="language")
     private String language;
