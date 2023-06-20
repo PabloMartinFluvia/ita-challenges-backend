@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
 
 @Service
-public class ChallengesServiceDefaultTODO implements ChallengesServiceTODO{
+public class ChallengesServiceDefaultTODO implements ChallengesServiceV2 {
 
     //TODO: implement method
     @Override
