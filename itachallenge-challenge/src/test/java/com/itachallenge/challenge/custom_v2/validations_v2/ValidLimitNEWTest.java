@@ -22,7 +22,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
 @TestPropertySource("classpath:validationMessages-test.properties")
-class ValidOffsetV2Test {
+class ValidLimitNEWTest {
 
     @Autowired
     private Validator validator;
@@ -30,46 +30,47 @@ class ValidOffsetV2Test {
     @Autowired
     private Environment environment;
 
-    private String offsetErrorMsg;
+    private String limitErrorMsg;
 
     @BeforeEach
     void init(){
-        offsetErrorMsg = environment.getProperty("offset.error");
+        limitErrorMsg =environment.getProperty("limit.error");
     }
 
     @ParameterizedTest
-    @DisplayName("Valid offset test")
-    @MethodSource("validOffset")
-    void validOffsetTest(int offset){
-        ModelWithOffsetTest subject = new ModelWithOffsetTest(offset);
-        Set<ConstraintViolation<ModelWithOffsetTest>> violations = validator.validate(subject);
+    @DisplayName("Valid limit test")
+    @MethodSource("validLimit")
+    void validLimitTest(int limit){
+        ModelWithLimitTest subject = new ModelWithLimitTest(limit);
+        Set<ConstraintViolation<ModelWithLimitTest>> violations = validator.validate(subject);
         assertThat(violations).isEmpty();
     }
 
-    static Stream<Integer> validOffset(){
-        return Stream.of(0,1);
+    static Stream<Integer> validLimit(){
+        return Stream.of(1,2);
     }
 
     @ParameterizedTest
-    @DisplayName("Invalid offset test")
-    @MethodSource("invalidOffset")
-    void invalidOffsetTest(int offset){
-        ModelWithOffsetTest subject = new ModelWithOffsetTest(offset);
-        Set<ConstraintViolation<ModelWithOffsetTest>> violations = validator.validate(subject);
+    @DisplayName("Invalid limit test")
+    @MethodSource("invalidLimit")
+    void invalidLimitTest(int limit){
+        ModelWithLimitTest subject = new ModelWithLimitTest(limit);
+        Set<ConstraintViolation<ModelWithLimitTest>> violations = validator.validate(subject);
         assertThat(violations).hasSize(1);
-        ConstraintViolation<ModelWithOffsetTest> violation = violations.stream().toList().get(0);
-        assertThat(violation.getMessage()).isEqualTo( offsetErrorMsg);
+        ConstraintViolation<ModelWithLimitTest> violation = violations.stream().toList().get(0);
+        assertThat(violation.getMessage()).isEqualTo( limitErrorMsg);
     }
 
-    static Stream<Integer> invalidOffset(){
-        return Stream.of(-1,-2);
+    static Stream<Integer> invalidLimit(){
+        return Stream.of(0,-1);
     }
 
     //inner classes for testing purposes
-    @AllArgsConstructor
-    class ModelWithOffsetTest {
 
-        @ValidOffsetV2
-        private int offset;
+    @AllArgsConstructor
+    class ModelWithLimitTest {
+
+        @ValidLimitNEW
+        private int limit;
     }
 }

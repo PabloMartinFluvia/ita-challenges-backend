@@ -2,7 +2,7 @@ package com.itachallenge.challenge.custom_v2.controllers_v2;
 
 import com.itachallenge.challenge.custom_v2.dtos_v2.PageDtoTODO;
 import com.itachallenge.challenge.custom_v2.exceptions_v2.ErrorDtoPROVISIONAL;
-import com.itachallenge.challenge.custom_v2.services_v2.ChallengesServiceV2;
+import com.itachallenge.challenge.custom_v2.services_v2.ChallengesServiceNEW;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.junit.jupiter.api.DisplayName;
@@ -35,9 +35,9 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(SpringExtension.class)
-@WebFluxTest(controllers = ChallengesControllerV2.class, excludeAutoConfiguration = {ReactiveSecurityAutoConfiguration.class})
+@WebFluxTest(controllers = ChallengesControllerUPDATE.class, excludeAutoConfiguration = {ReactiveSecurityAutoConfiguration.class})
 @TestPropertySource("classpath:validationMessages-test.properties")
-class ChallengesControllerV2Test {
+class ChallengesControllerUPDATETest {
 
     @Autowired
     private WebTestClient webClient;
@@ -46,13 +46,13 @@ class ChallengesControllerV2Test {
     private Environment environment;
 
     @MockBean
-    private ChallengesServiceV2 service;
+    private ChallengesServiceNEW service;
 
     @ParameterizedTest
     @DisplayName("Params limit/offset invalid values test")
     @MethodSource("initInvalidLimitOffset")
     void invalidOffsetLimitTest(String offset, String limit, String[] errorsMsgPropertyKeys){
-        String url = ChallengesControllerV2.MICRO_SERVER_CUSTOM+ ChallengesControllerV2.CHALLENGES;
+        String url = ChallengesControllerUPDATE.MICRO_SERVER_CUSTOM+ ChallengesControllerUPDATE.CHALLENGES;
         webClient.get()
                 .uri(uriBuilder -> uriBuilder.path(url)
                         .queryParam("offset",offset)
@@ -98,7 +98,7 @@ class ChallengesControllerV2Test {
     @DisplayName("Test: offset or limit not provided")
     @MethodSource("initNotProvided")
     void offsetNotProvidedTest(String notProvidedPropertyKey, String paramProvided, int providedValue){
-        String url = ChallengesControllerV2.MICRO_SERVER_CUSTOM+ ChallengesControllerV2.CHALLENGES;
+        String url = ChallengesControllerUPDATE.MICRO_SERVER_CUSTOM+ ChallengesControllerUPDATE.CHALLENGES;
         webClient.get()
                 .uri(uriBuilder -> uriBuilder.path(url)
                         .queryParam(paramProvided, providedValue)
@@ -136,7 +136,7 @@ class ChallengesControllerV2Test {
         PageDtoTODO pageTest = new PageTest(offset, limit, List.of(item1, item1, item1));
         when(service.findChallengesPage(offset,limit)).thenReturn(Mono.just(pageTest));
 
-        String url = ChallengesControllerV2.MICRO_SERVER_CUSTOM+ ChallengesControllerV2.CHALLENGES;
+        String url = ChallengesControllerUPDATE.MICRO_SERVER_CUSTOM+ ChallengesControllerUPDATE.CHALLENGES;
         webClient.get()
                 .uri(uriBuilder -> uriBuilder.path(url)
                         .queryParam("offset",offset)
