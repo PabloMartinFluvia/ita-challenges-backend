@@ -19,7 +19,7 @@ public class Challenge {
     private UUID uuid;
 
     @Field(name="level")
-    private String level;   //valor seteado fom properties
+    private String level;
 
     @Field(name="challenge_title")
     private String title;
