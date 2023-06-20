@@ -1,4 +1,4 @@
-package com.itachallenge.challenge.custom.validationsC;
+package com.itachallenge.challenge.custom_v2.validations_v2;
 
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;
