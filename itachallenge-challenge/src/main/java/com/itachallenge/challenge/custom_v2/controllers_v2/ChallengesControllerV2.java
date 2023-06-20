@@ -2,8 +2,8 @@ package com.itachallenge.challenge.custom_v2.controllers_v2;
 
 import com.itachallenge.challenge.custom_v2.dtos_v2.PageDtoTODO;
 import com.itachallenge.challenge.custom_v2.services_v2.ChallengesServiceTODO;
-import com.itachallenge.challenge.custom_v2.validations_v2.ValidLimit;
-import com.itachallenge.challenge.custom_v2.validations_v2.ValidOffset;
+import com.itachallenge.challenge.custom_v2.validations_v2.ValidLimitV2;
+import com.itachallenge.challenge.custom_v2.validations_v2.ValidOffsetV2;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,8 +29,8 @@ public class ChallengesControllerV2 {
     }
 
     @GetMapping(value = CHALLENGES)
-    public Mono<PageDtoTODO> findChallengesPage(@RequestParam @ValidOffset int offset,
-                                                @RequestParam @ValidLimit int limit){
+    public Mono<PageDtoTODO> findChallengesPage(@RequestParam @ValidOffsetV2 int offset,
+                                                @RequestParam @ValidLimitV2 int limit){
         return service.findChallengesPage(offset, limit);
     }
 }

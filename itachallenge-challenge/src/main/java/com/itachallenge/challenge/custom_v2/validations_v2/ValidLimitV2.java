@@ -10,15 +10,15 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-@Min(value = 0) //doesn't have sense exclude a negative value
+@Min(value = 1) //doesn't have sense limit the page size to less than one element
 @Target({ElementType.FIELD, ElementType.PARAMETER})
 @Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = {})
 @ReportAsSingleViolation
 //https://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/#section-constraint-composition
-public @interface ValidOffset {
+public @interface ValidLimitV2 {
 
-    String message() default "{offset.error}";
+    String message() default "{limit.error}";
 
     Class<?>[] groups() default {};
 
