@@ -9,6 +9,7 @@ public class PropertiesConfigTODOUPDATE {
     //TODO: new attribute + inject value (from consul?) + implement get method
 
     public String getFindStatisticsURL() {
+        //must match: "..../statistics?challenge=" (#110) -> param values are appended in logic
         return null; // TODO: must return url for request cahllenge statistics to micro user
     }
 }
